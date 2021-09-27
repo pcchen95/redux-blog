@@ -78,7 +78,7 @@ export const cleanPosts = () => (dispatch) => {
 
 export const newPost = (data) => (dispatch) => {
   return addPost(data).then((res) => {
-    if (!res.ok) {
+    if (!res.id) {
       return dispatch(setErrMessage(res.message));
     }
     return res;
